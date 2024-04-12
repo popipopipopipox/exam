@@ -1,0 +1,45 @@
+﻿<Window x:Class="exam.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:exam"
+        mc:Ignorable="d"
+        Title="" Height="264" Width="444">
+
+    <Canvas>
+        <StackPanel Canvas.Left="94" Canvas.Top="86" HorizontalAlignment="Left" VerticalAlignment="Center" Width="256" Name="MainSP">
+            <Button Content="Работник склада" FontFamily="Times New Roman" Click="Worker"/>
+            <Button Content="Покупатель" FontFamily="Times New Roman" Click="Customer"/>
+        </StackPanel>
+
+        <StackPanel x:Name="SP4" Canvas.Left="115" Canvas.Top="19" Visibility="Collapsed">
+            <TextBlock Text="Изменить количество товара на складе:" FontFamily="Times New Roman"/>
+            <TextBox x:Name="Newkol"/>
+            <Button Height="20" Width="124" Click="NewStock"/>
+        </StackPanel>
+
+        <Button Height="20" Width="100" Canvas.Left="172" Canvas.Top="218" Content="Выйти" Click="Exit" FontFamily="Times New Roman" HorizontalAlignment="Center" VerticalAlignment="Top" />
+
+        <StackPanel x:Name="SP5" Canvas.Left="115" Canvas.Top="93" HorizontalAlignment="Left" VerticalAlignment="Center" Width="201" Visibility="Collapsed">
+            <TextBlock Text="Изменить цену товара:" FontFamily="Times New Roman"/>
+            <TextBox x:Name="Newcost"/>
+            <Button Height="20" Width="124" Click="NewCost"/>
+        </StackPanel>
+
+
+
+        <StackPanel Canvas.Left="92" Canvas.Top="37" Name="SP1" Visibility="Collapsed">
+            <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" Width="260" Canvas.Left="92" Canvas.Top="42" Text="Сколько хлеба нужно? (впишите целое число/кол)" FontFamily="Times New Roman"/>
+            <TextBox HorizontalAlignment="Left" VerticalAlignment="Center" Width="260" Canvas.Left="92" Canvas.Top="67" Name="Zakaz" FontFamily="Times New Roman"/>
+        </StackPanel>
+
+        <StackPanel Canvas.Left="92" Canvas.Top="69" HorizontalAlignment="Center" VerticalAlignment="Top" Width="260" Name="SP2" Visibility="Collapsed">
+            <TextBlock HorizontalAlignment="Center" Width="259" Canvas.Left="92" Canvas.Top="90" Text="Стоимость:" FontFamily="Times New Roman"/>
+            <TextBox x:Name="ZakazCost" IsEnabled="False" FontFamily="Times New Roman"/>
+            <Button Height="25" Width="100" Content="Проверить цену" FontFamily="Times New Roman" Click="CalcCost"/>
+        </StackPanel>
+
+        <Button Height="20" Width="260" Canvas.Left="92" Canvas.Top="149" FontFamily="Times New Roman" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Оформить заказ" Click="Buy" Name="SP3" Visibility="Collapsed"/>
+    </Canvas>
+</Window>
